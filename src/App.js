@@ -8,9 +8,13 @@ import PharmaciesList from "./components/PharmaciesList";
 
 class App extends Component {
   render () {
+    const date = new Date().toDateString();
     return (
       <div className="container">
         <Header />
+        <div className="col-3">
+          <p>Hello, today is {date}</p>
+        </div>
         <TotalPharmacies />
         <AddPharmacy />
         <PharmaciesList />

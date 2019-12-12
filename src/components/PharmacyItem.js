@@ -1,11 +1,14 @@
 import React from "react";
 
 class PharmacyItem extends React.Component {
-    render () {
+    render() {
         return (
             <div>
-                
-                <h5>This will be the line listing for each pharmacy</h5>
+                <div className="row pb-3 mb-3">
+                    <div className="col-3">
+                        <p>{this.props.text}</p>
+                    </div>
+                </div>
             </div>
         );
     }
