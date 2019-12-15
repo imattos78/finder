@@ -36,3 +36,17 @@
     transform: rotate(360deg);
   }
 }
+
+.add {
+  background-color: #8200ff;
+  text-decoration-color: white;
+  color: white;
+  
+}
+
+.container{
+  background-image: url(./images/LogoMakr_8jXFz0.png);
+  background-repeat: no-repeat;
+  background-position: center center;
+  background-size:     contain;
+}
