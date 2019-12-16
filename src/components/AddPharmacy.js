@@ -1,5 +1,4 @@
 import React from "react";
-import styles from "../App.css"
 
 class AddPharmacy extends React.Component {
 
@@ -9,7 +8,7 @@ class AddPharmacy extends React.Component {
 
 
                 <div id="add-pharmacy" className="row appRow">
-                    <div className="mx-auto col-12 col-lg-8">
+                    <div className="mx-auto col-12 col-lg-9">
                         <div className="card bg-white text-white">
                             <div className="card-body">
                                 <h5 className="card-title">Add new pharmacy </h5>
@@ -34,7 +33,7 @@ class AddPharmacy extends React.Component {
                     <label for="exampleInputTown">Town</label>
                     <input type="text" className="form-control" id="exampleInputTown" placeholder="Password"></input>
                 </div> */}
-                <p></p>
+                                                <p></p>
                                                 <div className="form-group col-4 form-check form-check-inline">
                                                     <input type="checkbox" className="form-check-input" id="lateOpening"></input>
                                                     <label className="form-check-label" htmlFor="lateOpening">Late Opening</label>
@@ -58,14 +57,14 @@ class AddPharmacy extends React.Component {
                                         </div>
                                     </div>
                                 </div>
-                            </div> 
+                            </div>
                         </div>
                     </div>
                 </div>
             </form>
 
-                                            );
-                                        }
-                                    }
-                                    
+        );
+    }
+}
+
 export default AddPharmacy;
