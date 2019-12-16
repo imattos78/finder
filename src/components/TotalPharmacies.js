@@ -1,11 +1,19 @@
 import React from "react";
 
 class TotalPharmacies extends React.Component {
-    render () {
+    render() {
         return (
-            <div>
-                
-                <h5>This component will dynamically show the total number of pharmacies currently in our database</h5>
+            <div className="row appRow d-none d-md-block">
+                <div className="mx-auto col-12 col-lg-9">
+                    <div className="card bg-white text-white">
+                        <div className="card-body">
+                            <h5 className="card-title">Pharmacies </h5>
+                            <div className="card-text" color="#8200ff">
+                                <h5>There are currently {this.props.count} pharmacies listed</h5>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         );
     }

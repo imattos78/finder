@@ -9,7 +9,7 @@ import Footer from './components/Footer';
 class App extends Component {
 
   state = {
-    pharmacy: [
+    pharmacies: [
     { id: 1, location: "still.glory.blur", town: "Cheadle", late: 1, vaccine: 0, delivery: 0, e_pres:1, date: "2019-10-15"},
     { id: 2, location: "index.impose.create", town: "Wythenshawe", late: 1, vaccine: 1, delivery: 1, e_pres:1, date: "2019-12-15"},
     { id: 3, location: "breed.calms.forget", town: "Greater Manchester", late: 1, vaccine: 0, delivery: 0, e_pres:1, date: "2019-11-15"},
@@ -20,11 +20,11 @@ class App extends Component {
   };
 
   render() {
-
+    const count = this.state.pharmacies.length;
     return (
       <div className="container">
         <Header />
-        <TotalPharmacies />
+        <TotalPharmacies count={count}/>
         <AddPharmacy />
         <PharmaciesList />
         <Footer />
