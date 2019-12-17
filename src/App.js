@@ -26,7 +26,7 @@ class App extends Component {
         <Header />
         <TotalPharmacies count={count}/>
         <AddPharmacy />
-        <PharmaciesList />
+        <PharmaciesList pharmacies={this.state.pharmacies}/>
         <Footer />
       </div>
     )

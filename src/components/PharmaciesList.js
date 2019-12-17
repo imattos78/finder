@@ -2,11 +2,13 @@ import React from "react";
 import PharmacyItem from "./PharmacyItem"
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSyringe, faTruck, faLaptopMedical, faMapMarked } from '@fortawesome/free-solid-svg-icons';
-import w3wlogo from "../images/w3w_logo.png"
 
 
 class PharmaciesList extends React.Component {
     render() {
+        const pharmacies = this.props.pharmacies
+        console.log(pharmacies)
+
         return (
 
             <div id="list-pharmacy" className="row appRow">
@@ -38,12 +40,16 @@ class PharmaciesList extends React.Component {
                             </div>
                         </div>
                         <div className="card-body">
-                            <h5 className="card-title">Primary card title</h5>
+                            {/* <h5 className="card-title">Primary card title</h5> */}
                             <div className="card-text">
 
+                                {pharmacies.map(pharmacy => {
+                                    return <PharmacyItem location={pharmacy.location} town={pharmacy.town} key={pharmacy.id} id={pharmacy.id} late={pharmacy.late} vaccine={pharmacy.vaccine} delivery={pharmacy.delivery} e_pres={pharmacy.e_pres} date={pharmacy.date} />
+                                })}
+                            </div>
+                                {/* { id: 1, location: "still.glory.blur", town: "Cheadle", late: 1, vaccine: 0, delivery: 0, e_pres:1, date: "2019-10-15"}, */}
 
-
-                                <h5><PharmacyItem text="pharmacy1" />Some quick example text to build on the card title and make up the bulk of the card's content.</h5></div>
+                                {/* <h5><PharmacyItem pharmacies={pharmacies} text="pharmacy 1" />Some quick example text to build on the card title and make up the bulk of the card's content.</h5></div> */}
                         </div>
                     </div>
 
