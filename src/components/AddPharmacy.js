@@ -29,6 +29,12 @@ class AddPharmacy extends React.Component {
                                                     <label htmlFor="exampleTown">Town</label>
                                                     <input type="text" className="form-control" id="exampleTown" placeholder="Enter Town"></input>
                                                 </div>
+                                                <div className="input-group">
+                                                    <div className="input-group-prepend">
+                                                        <span className="input-group-text">Comments</span>
+                                                    </div>
+                                                    <textarea className="form-control" aria-label="comments"></textarea>
+                                                </div>
                                                 {/* <div className="form-group">
                     <label for="exampleInputTown">Town</label>
                     <input type="text" className="form-control" id="exampleInputTown" placeholder="Password"></input>
