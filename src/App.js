@@ -47,6 +47,21 @@ class App extends Component {
     });
   }
 
+  updateItem = id => {
+    const updatedItems = this.state.pharmacies.map(item => {
+      if (item.id === id) {
+        item.late = 0;
+        item.vaccine = 0;
+        item.delivery = 0;
+        item.e_pres = 0;
+      }
+      return item
+    });
+    this.setState({
+      pharmacies: updatedItems
+    });
+  }
+
   render() {
     const count = this.state.pharmacies.length;
     return (
@@ -54,7 +69,7 @@ class App extends Component {
         <Header />
         <TotalPharmacies count={count}/>
         <AddPharmacy addItemFunc={this.addNewItem}/>
-        <PharmaciesList pharmacies={this.state.pharmacies} deleteItemFunc={this.deleteItem}/>
+        <PharmaciesList pharmacies={this.state.pharmacies} deleteItemFunc={this.deleteItem} updateItemFunc={this.updateItem}/>
         <Footer />
       </div>
     )
