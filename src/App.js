@@ -59,15 +59,23 @@ class App extends Component {
       console.log("Error inserting product", err);
     });
 };
+deleteItem = id => {
+  axios.delete(`https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies/${id}`)
+    .then((response)=>{
+      const undeletedItems = this.state.pharmacies.filter(item =>{
+        return item.id !== id
+      })
+      this.setState({
+        pharmacies: undeletedItems
+      });
+    })
+      .catch((err)=>{
+        console.log(err);
+      })
 
-  deleteItem = id => {
-    const undeletedItems = this.state.pharmacies.filter(item => {
-      return item.id !== id
-    });
-    this.setState({
-      pharmacies: undeletedItems
-    });
-  }
+};
+
+  
 
   updateItem = id => {
     const updatedItems = this.state.pharmacies.map(item => {
