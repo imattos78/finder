@@ -4,7 +4,7 @@ class TotalPharmacies extends React.Component {
     render() {
         return (
             <div className="row appRow d-none d-md-block">
-                <div className="mx-auto col-12 col-lg-9">
+                <div className="mx-auto col-12 col-lg-9 mb-2">
                     <div className="card bg-white text-white">
                         <div className="card-body">
                             <h5 className="card-title">Pharmacies </h5>

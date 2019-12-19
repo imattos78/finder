@@ -2,6 +2,7 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSyringe, faTruck, faLaptopMedical, faCity, faComment } from '@fortawesome/free-solid-svg-icons';
 import w3wlogo from "../images/w3w_logo.png"
+import pharmPin from "../images/LogoMakr_2XNkij.png"
 import moment from "moment";
 
 class AddPharmacy extends React.Component {
@@ -73,10 +74,10 @@ class AddPharmacy extends React.Component {
 
             <form>
                 <div id="add-pharmacy" className="row appRow">
-                    <div className="mx-auto col-12 col-lg-9">
+                    <div className="mx-auto col-12 col-lg-9 mb-2">
                         <div className="card bg-white text-white">
                             <div className="card-body">
-                                <h5 className="card-title">Add new pharmacy </h5>
+                                <h5 className="card-title">Add new pharmacy <img src={pharmPin} alt="icon map pin with pharmacy symbol" width="20 px" /></h5>
                                 <div className="card-text">
                                     <div className="row">
                                         <div className="col-12">

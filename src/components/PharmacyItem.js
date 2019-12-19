@@ -21,7 +21,7 @@ class PharmacyItem extends React.Component {
             <div>
                 <div className="row pb-3 mb-3">
                     <h5 className="col-2 col-md-1"><a href={link} target="_blank" rel="noopener noreferrer"><img width="30 px" src={w3wlogo} alt="w3wLogo" /></a></h5>
-                    <h5 className="col-5 col-md-5">{this.props.town}</h5>
+                    <h5 className="col-10 col-md-5">{this.props.town}</h5>
                     <h5 className="col-2 col-md-1">{this.props.late === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
                     <h5 className="col-2 col-md-1">{this.props.vaccine === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
                     <h5 className="col-2 col-md-1">{this.props.delivery === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
