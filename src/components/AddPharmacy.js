@@ -27,20 +27,21 @@ class AddPharmacy extends React.Component {
     }
 
 
-    handleChange(event) {
-        event.preventDefault();
-        console.log("new value", event.target.value);
-        console.log("new state name", event.target.name)
-        const value = event.target.value;
+    handleClick = (e) => {
+        e.preventDefault();
+        console.log("handleClick");
         this.props.addItemFunc(this.state.newLocation, this.state.newTown, this.state.late, this.state.vaccs, this.state.deliver, this.state.ePres, this.state.date, this.state.comments);
-        // this.setState
-        //     ({
-        //          [event.target.name]: value
-        //         // newLocation : value
-        //       })
         console.log("new state", this.state)
+        this.setState({
+            newLocation: "",
+            newTown: "",
+            comments: "",
+            late: 0,
+            vaccs: 0,
+            deliver: 0,
+            ePres: 0
+        })
     }
-
 
     updateText = (event) => {
         console.log("updateText")
@@ -57,7 +58,9 @@ class AddPharmacy extends React.Component {
         console.log("updateLate")
         console.log("new value", event.target.value);
         console.log("new state name", event.target.name)
-        const value = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+        const bool = event.target.type === "checkbox" ? event.target.checked : event.target.value;
+        console.log("bool", bool)
+        const value = bool === true ? 1 : 0;
         this.setState
             ({
                 [event.target.name]: value,
@@ -160,7 +163,12 @@ class AddPharmacy extends React.Component {
                                                 </div>
 
                                                 <div className="col-12">
-                                                    <button type="submit" className="add">Submit</button>
+                                                    <button
+                                                        type="submit"
+                                                        className="add"
+                                                        onClick={this.handleClick}
+                                                        disabled={this.state.newLocation.length === 0 || this.state.newTown.length === 0}
+                                                    >Submit</button>
                                                 </div>
                                             </div>
                                         </div>
