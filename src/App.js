@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import axios from "axios";
 import moment from "moment";
 import './App.css';
 import Header from './components/Header';
@@ -11,14 +12,26 @@ class App extends Component {
 
   state = {
     pharmacies: [
-      { id: 1, location: "still.glory.blur", town: "Cheadle", late: 1, vaccine: 0, delivery: 0, e_pres: 1, date: "2019-10-15" },
-      { id: 2, location: "index.impose.create", town: "Wythenshawe", late: 1, vaccine: 1, delivery: 1, e_pres: 1, date: "2019-12-15" },
-      { id: 3, location: "breed.calms.forget", town: "Greater Manchester", late: 1, vaccine: 0, delivery: 0, e_pres: 1, date: "2019-11-15" },
-      { id: 4, location: "pretty.device.overnight", town: "Fallowfield", late: 1, vaccine: 0, delivery: 1, e_pres: 1, date: "2019-09-15" },
-      { id: 5, location: "usage.belts.fuzzy", town: "Stockport", late: 0, vaccine: 1, delivery: 1, e_pres: 1, date: "2019-12-16" }
+      // { id: 1, location: "still.glory.blur", town: "Cheadle", late: 1, vaccine: 0, delivery: 0, e_pres: 1, date: "2019-10-15" }
       //id | location  | town     | late | vaccine | delivery | e_pres | date
     ]
   };
+  componentDidMount() {
+    axios.get("https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies")
+      
+    .then((response) => {
+        const pharmaciesFromDB = response.data; 
+        
+      this.setState ({
+        pharmacies: pharmaciesFromDB
+      
+    })
+  })
+       
+      .catch(err  => {
+        console.log("Error getting pharmacies data", err)
+      });
+  }
 
   addNewItem = (itemLocation, itemTown, itemLate, itemDeliver, itemVacc, itemePres) => {
     const pharmaciesCopy = this.state.pharmacies.slice();
@@ -31,12 +44,21 @@ class App extends Component {
       e_pres: itemePres,
       date: moment().format("YYYY-MM-DD"),
       id: 27
-    };
-    pharmaciesCopy.push(newItem)
-    this.setState({
-      pharmacies: pharmaciesCopy
+    }
+    axios.post("https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies", newItem)
+    .then((response)=>{
+        console.log(response);
+         const pharmaciesFromDB = response.data;
+         pharmaciesCopy.push(pharmaciesFromDB)
+         this.setState({
+          pharmacies: pharmaciesCopy
+
+        });
+    })
+    .catch((err)=>{
+      console.log("Error inserting product", err);
     });
-  };
+};
 
   deleteItem = id => {
     const undeletedItems = this.state.pharmacies.filter(item => {
