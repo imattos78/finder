@@ -2,6 +2,8 @@ import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faRedoAlt, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
 import w3wlogo from "../images/w3w_logo.png"
+
+
 class PharmacyItem extends React.Component {
     render() {
         console.log(this.props.location)

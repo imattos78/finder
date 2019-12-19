@@ -1,4 +1,5 @@
 import React, { Component } from "react"
+import moment from "moment";
 import './App.css';
 import Header from './components/Header';
 import TotalPharmacies from "./components/TotalPharmacies";
@@ -19,13 +20,35 @@ class App extends Component {
     ]
   };
 
+  addNewItem = (itemLocation, itemTown, itemLate, itemDeliver, itemVacc, itemePres) => {
+    const pharmaciesCopy = this.state.pharmacies.slice();
+
+    const newItem = {
+      location: itemLocation,
+      town: itemTown,
+      late: itemLate,
+      vaccine: itemVacc,
+      delivery: itemDeliver,
+      e_pres: itemePres,
+      date: moment().format("YYYY-MM-DD"),
+      id: 27
+    };
+
+    pharmaciesCopy.push(newItem)
+
+    this.setState({
+      pharmacies: pharmaciesCopy
+    });
+
+  };
+
   render() {
     const count = this.state.pharmacies.length;
     return (
       <div className="container">
         <Header />
         <TotalPharmacies count={count}/>
-        <AddPharmacy />
+        <AddPharmacy addItemFunc={this.addNewItem}/>
         <PharmaciesList pharmacies={this.state.pharmacies}/>
         <Footer />
       </div>
