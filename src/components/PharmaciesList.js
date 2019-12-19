@@ -12,8 +12,8 @@ class PharmaciesList extends React.Component {
 
         return (
 
-            <div id="list-pharmacy" className="row appRow">
-                <div className="mx-auto col-12 col-lg-9">
+            <div id="list-pharmacy" className="row">
+                <div className="appRow mx-auto col-12 col-lg-9">
                     <div className="card bg-white mb-2" >
 
                         <div className="card-header bg-transparent">

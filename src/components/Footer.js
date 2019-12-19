@@ -4,7 +4,7 @@ import aclogo from "../images/LogoMakr_0bAO9b.png";
 class Footer extends React.Component {
     render() {
         return (
-            <div className="row appRow d-none d-md-block">
+            <div className="row d-none d-md-block mt-2">
                 <div className="mx-auto col-12 col-lg-9">
                     <div className="card">
                         <div className="card-body">

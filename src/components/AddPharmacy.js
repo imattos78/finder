@@ -73,8 +73,8 @@ class AddPharmacy extends React.Component {
         return (
 
             <form>
-                <div id="add-pharmacy" className="row appRow">
-                    <div className="mx-auto col-12 col-lg-9 mb-2">
+                <div id="add-pharmacy" className="row">
+                    <div className="appRow mx-auto col-12 col-lg-9 mb-2">
                         <div className="card bg-white text-white">
                             <div className="card-body">
                                 <h5 className="card-title">Add new pharmacy <img src={pharmPin} alt="icon map pin with pharmacy symbol" width="20 px" /></h5>
@@ -165,6 +165,7 @@ class AddPharmacy extends React.Component {
 
                                                 <div className="col-12">
                                                     <button
+
                                                         type="submit"
                                                         className="add"
                                                         onClick={this.handleClick}

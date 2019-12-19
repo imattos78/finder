@@ -7,8 +7,8 @@ class Header extends React.Component {
         const date = new Date().toDateString();
 
         return (
-            <div className="row appRow">
-                <div className="mx-auto col-12 col-lg-9 mb-2">
+            <div className="row">
+                <div className="appRow mx-auto col-12 col-lg-9 mb-2">
                     <div className="card">
                         <div className="card-body">
                             <img className="card-title" src={logo} alt="Logo" />

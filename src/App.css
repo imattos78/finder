@@ -41,7 +41,7 @@
   background-color: #8200ff;
   text-decoration-color: white;
   color: white;
-  
+  border-radius: 6px;
 }
 
 .container{
@@ -49,4 +49,10 @@
   background-repeat: no-repeat;
   background-position: center center;
   background-size:     contain;
+}
+
+.appRow {
+  padding-top: 5px;
+  padding-bottom: 10px;
+  border-bottom: double rgb(236, 180, 222);
 }
