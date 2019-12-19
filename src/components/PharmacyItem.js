@@ -5,6 +5,9 @@ import w3wlogo from "../images/w3w_logo.png"
 
 
 class PharmacyItem extends React.Component {
+    handleDelete = () => {
+        this.props.deleteItemFunc(this.props.id);
+    }
     render() {
         console.log(this.props.location)
         const link = "https://what3words.com/" + this.props.location
@@ -22,7 +25,7 @@ class PharmacyItem extends React.Component {
                         <button className="btn"  ><FontAwesomeIcon icon={faRedoAlt} /></button>
                     </div>
                     <div className="col-1">
-                        <button className="btn"  ><FontAwesomeIcon icon={faTrashAlt} /></button>
+                        <button className="btn"  onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></button>
                     </div>
                 </div>
             </div >

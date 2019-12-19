@@ -22,7 +22,6 @@ class App extends Component {
 
   addNewItem = (itemLocation, itemTown, itemLate, itemDeliver, itemVacc, itemePres) => {
     const pharmaciesCopy = this.state.pharmacies.slice();
-
     const newItem = {
       location: itemLocation,
       town: itemTown,
@@ -33,14 +32,20 @@ class App extends Component {
       date: moment().format("YYYY-MM-DD"),
       id: 27
     };
-
     pharmaciesCopy.push(newItem)
-
     this.setState({
       pharmacies: pharmaciesCopy
     });
-
   };
+
+  deleteItem = id => {
+    const undeletedItems = this.state.pharmacies.filter(item => {
+      return item.id !== id
+    });
+    this.setState({
+      pharmacies: undeletedItems
+    });
+  }
 
   render() {
     const count = this.state.pharmacies.length;
@@ -49,7 +54,7 @@ class App extends Component {
         <Header />
         <TotalPharmacies count={count}/>
         <AddPharmacy addItemFunc={this.addNewItem}/>
-        <PharmaciesList pharmacies={this.state.pharmacies}/>
+        <PharmaciesList pharmacies={this.state.pharmacies} deleteItemFunc={this.deleteItem}/>
         <Footer />
       </div>
     )

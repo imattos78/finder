@@ -21,7 +21,6 @@ class PharmaciesList extends React.Component {
                                 <div className="col-2 col-md-1">
                                     <h5><FontAwesomeIcon icon={faMapMarked} /></h5>
                                 </div>
-
                                 <div className="col-8 col-md-5 ">
                                     <h6>Town</h6>
                                 </div>
@@ -44,7 +43,7 @@ class PharmaciesList extends React.Component {
                             <div className="card-text">
 
                                 {pharmacies.map(pharmacy => {
-                                    return <PharmacyItem location={pharmacy.location} town={pharmacy.town} key={pharmacy.id} id={pharmacy.id} late={pharmacy.late} vaccine={pharmacy.vaccine} delivery={pharmacy.delivery} e_pres={pharmacy.e_pres} date={pharmacy.date} />
+                                    return <PharmacyItem deleteItemFunc={this.props.deleteItemFunc} location={pharmacy.location} town={pharmacy.town} key={pharmacy.id} id={pharmacy.id} late={pharmacy.late} vaccine={pharmacy.vaccine} delivery={pharmacy.delivery} e_pres={pharmacy.e_pres} date={pharmacy.date} />
                                 })}
                             </div>
                                 {/* { id: 1, location: "still.glory.blur", town: "Cheadle", late: 1, vaccine: 0, delivery: 0, e_pres:1, date: "2019-10-15"}, */}
