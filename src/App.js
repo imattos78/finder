@@ -54,6 +54,7 @@ class App extends Component {
         item.vaccine = 0;
         item.delivery = 0;
         item.e_pres = 0;
+        item.date= moment().format("YYYY-MM-DD");
       }
       return item
     });
