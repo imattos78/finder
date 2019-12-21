@@ -5,15 +5,30 @@ import w3wlogo from "../images/w3w_logo.png"
 
 
 class PharmacyItem extends React.Component {
+    constructor(props){
+        super(props);
+
+        this.state ={
+            color: "blue"
+        }
+    }
     handleDelete = () => {
         this.props.deleteItemFunc(this.props.id);
     }
 
     handleUpdate = () => {
         this.props.updateItemFunc(this.props.id)
+       
+            this.setState({
+                color: "black" 
+            })  
+            
     }
+    
+   
 
     render() {
+        
         console.log(this.props.location)
         const link = "https://what3words.com/" + this.props.location
         console.log(link)
@@ -22,10 +37,10 @@ class PharmacyItem extends React.Component {
                 <div className="row pb-3 mb-3">
                     <h5 className="col-2 col-md-1"><a href={link} target="_blank" rel="noopener noreferrer"><img width="30 px" src={w3wlogo} alt="w3wLogo" /></a></h5>
                     <h5 className="col-10 col-md-5">{this.props.town}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.late === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.vaccine === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.delivery === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.e_pres === 1 ? <FontAwesomeIcon icon={faCheckCircle} /> : <FontAwesomeIcon icon={faTimesCircle} />}</h5>
+                    <h5 className='col-2 col-md-1'>{this.props.late === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color}/> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
+                    <h5 className="col-2 col-md-1">{this.props.vaccine === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
+                    <h5 className="col-2 col-md-1">{this.props.delivery === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
+                    <h5 className="col-2 col-md-1">{this.props.e_pres === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
                     <div className="col-1">
                         <button className="btn" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
                     </div>

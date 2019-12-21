@@ -18,17 +18,17 @@ class App extends Component {
   };
   componentDidMount() {
     axios.get("https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies")
-      
-    .then((response) => {
-        const pharmaciesFromDB = response.data; 
-        
-      this.setState ({
-        pharmacies: pharmaciesFromDB
-      
-    })
-  })
-       
-      .catch(err  => {
+
+      .then((response) => {
+        const pharmaciesFromDB = response.data;
+
+        this.setState({
+          pharmacies: pharmaciesFromDB
+
+        })
+      })
+
+      .catch(err => {
         console.log("Error getting pharmacies data", err)
       });
   }
@@ -46,51 +46,60 @@ class App extends Component {
       id: 27
     }
     axios.post("https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies", newItem)
-    .then((response)=>{
+      .then((response) => {
         console.log(response);
-         const pharmaciesFromDB = response.data;
-         pharmaciesCopy.push(pharmaciesFromDB)
-         this.setState({
+        const pharmaciesFromDB = response.data;
+        pharmaciesCopy.push(pharmaciesFromDB)
+        this.setState({
           pharmacies: pharmaciesCopy
 
         });
-    })
-    .catch((err)=>{
-      console.log("Error inserting product", err);
-    });
-};
-deleteItem = id => {
-  axios.delete(`https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies/${id}`)
-    .then((response)=>{
-      const undeletedItems = this.state.pharmacies.filter(item =>{
-        return item.id !== id
       })
-      this.setState({
-        pharmacies: undeletedItems
+      .catch((err) => {
+        console.log("Error inserting product", err);
       });
-    })
-      .catch((err)=>{
+  };
+  deleteItem = id => {
+    axios.delete(`https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies/${id}`)
+      .then((response) => {
+        const undeletedItems = this.state.pharmacies.filter(item => {
+          return item.id !== id
+        })
+        this.setState({
+          pharmacies: undeletedItems
+        });
+      })
+      .catch((err) => {
         console.log(err);
       })
 
-};
+  };
 
-  
+
 
   updateItem = id => {
-    const updatedItems = this.state.pharmacies.map(item => {
+    const updatedPharmacies = this.state.pharmacies;
+    let selectedPharmacy = {};
+    updatedPharmacies.forEach(item => {
       if (item.id === id) {
         item.late = 0;
         item.vaccine = 0;
         item.delivery = 0;
         item.e_pres = 0;
-        item.date= moment().format("YYYY-MM-DD");
+        item.date = moment().format('YYYY-MM-DD');
+        selectedPharmacy = item;
+        console.log(selectedPharmacy)
       }
-      return item
     });
-    this.setState({
-      pharmacies: updatedItems
-    });
+    axios.put(`https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies/${id}`, selectedPharmacy)
+      .then((response) => {
+        this.setState({
+          pharmacies: updatedPharmacies
+        });
+      })
+      .catch((err) => {
+        console.log("Error updating item", err)
+      });
   }
 
   render() {

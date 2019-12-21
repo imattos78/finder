@@ -56,3 +56,10 @@
   padding-bottom: 10px;
   border-bottom: double rgb(236, 180, 222);
 }
+
+.black{
+  color: black;
+}
+.blue{
+  color:#8200ff;
+}
