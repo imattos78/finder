@@ -43,7 +43,6 @@ class App extends Component {
       delivery: itemDeliver,
       e_pres: itemePres,
       date: moment().format("YYYY-MM-DD"),
-      id: 27
     }
     axios.post("https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies", newItem)
       .then((response) => {
