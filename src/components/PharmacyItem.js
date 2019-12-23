@@ -13,10 +13,10 @@ class PharmacyItem extends React.Component {
         this.state = {
             color: "blue",
             categories: [
-                { id: 1, text: <FontAwesomeIcon icon={faMoon} />, checked: Boolean(this.props.late) },
-                { id: 2, text: <FontAwesomeIcon icon={faSyringe} />, checked: Boolean(this.props.vaccine) },
-                { id: 3, text: <FontAwesomeIcon icon={faTruck} />, checked: Boolean(this.props.delivery) },
-                { id: 4, text: <FontAwesomeIcon icon={faLaptopMedical} />, checked: Boolean(this.props.e_pres) },
+                { id: 1, text: <FontAwesomeIcon icon={faMoon} /> , checked: Boolean(this.props.late) },
+                { id:2, text: <FontAwesomeIcon icon={faSyringe} />, checked: Boolean(this.props.vaccine) },
+                { id:3, text: <FontAwesomeIcon icon={faTruck} />, checked: Boolean(this.props.delivery) },
+                { id:4, text: <FontAwesomeIcon icon={faLaptopMedical} />, checked: Boolean(this.props.e_pres) },
             ]
 
         }
@@ -41,11 +41,20 @@ class PharmacyItem extends React.Component {
 
     renderCatList() {
         console.log("renderCatList called")
+        console.log(this.state.categories[0].checked)
+        const late = this.state.categories[0].checked === true ? 1 : 0;
+        const vaccine = this.state.categories[1].checked === true ? 1 : 0;
+        const delivery = this.state.categories[2].checked === true ? 1 : 0;
+        const e_pres = this.state.categories[3].checked === true ? 1 : 0;
+        console.log(late, vaccine, delivery, e_pres)
         console.log(this.state.categories) 
+        
+        console.log("late")
 
         const catList = this.state.categories.map((category, i, catArray) =>
-            <div  >
-                <span>{category.text}</span>
+            <div>
+                <span>{category.text}  </span>
+                <span key={category.id}>
                 <Switch
                     onChange={(toggleValue) => {
                         catArray[i].checked = toggleValue;
@@ -57,10 +66,9 @@ class PharmacyItem extends React.Component {
                     offColor="#8200ff"
                     height={20}
                     width={40}
-                />
+                /></span>
             </div>
         )
-        
         return catList;
     }
 
@@ -75,8 +83,8 @@ class PharmacyItem extends React.Component {
         return (
             <div>
                 <div className="row pb-3 mb-3">
-                    <h5 className="col-2 col-md-1"><a href={link} target="_blank" rel="noopener noreferrer"><img width="30 px" src={w3wlogo} alt="w3wLogo" /></a></h5>
-                    <h5 className="col-10 col-md-5">{this.props.town}</h5>
+                    <h5 className="col-2 col-md-2"><a href={link} target="_blank" rel="noopener noreferrer"><img width="30 px" src={w3wlogo} alt="w3wLogo" /></a></h5>
+                    <h5 className="col-10 col-md-3">{this.props.town}</h5>
                     {/* <h5 className='col-2 col-md-1'>{this.props.late === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
                     <h5 className="col-2 col-md-1">{this.props.vaccine === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
                     <h5 className="col-2 col-md-1">{this.props.delivery === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
