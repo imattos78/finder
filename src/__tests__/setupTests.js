@@ -28,4 +28,4 @@ describe("AddPharmacy component", () => {
       const pharmaciesItem = create(<PharmacyItem />);
       expect(pharmaciesItem.toJSON()).toMatchSnapshot();
     });
-  })
+  });
