@@ -1,6 +1,7 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faMoon, faSyringe, faTruck, faLaptopMedical, faCity, faComment } from '@fortawesome/free-solid-svg-icons';
+import './AddPharmacy.css';
 import w3wlogo from "../images/w3w_logo.png"
 import pharmPin from "../images/LogoMakr_2XNkij.png"
 import moment from "moment";
@@ -107,7 +108,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                 </div>
 
-                                                <div className="form-group col-4 form-check form-check-inline">
+                                                <div className="form-group col-4 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
@@ -117,7 +118,7 @@ class AddPharmacy extends React.Component {
                                                         onChange={this.updateCheckboxes}></input>
                                                     <label className="form-check-label" htmlFor="lateOpening">Late Opening <FontAwesomeIcon icon={faMoon} /> </label>
                                                 </div>
-                                                <div className="form-group col-4 form-check form-check-inline">
+                                                <div className="form-group col-4 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
@@ -128,7 +129,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                     <label className="form-check-label" htmlFor="vaccs">Vaccinations <FontAwesomeIcon icon={faSyringe} /> </label>
                                                 </div>
-                                                <div className="form-group col-4 form-check form-check-inline">
+                                                <div className="form-group col-4 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
@@ -139,7 +140,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                     <label className="form-check-label" htmlFor="delivery">Delivery <FontAwesomeIcon icon={faTruck} /></label>
                                                 </div>
-                                                <div className="form-group col-4 form-check form-check-inline">
+                                                <div className="form-group col-5 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
