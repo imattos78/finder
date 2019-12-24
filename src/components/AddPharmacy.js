@@ -108,7 +108,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                 </div>
 
-                                                <div className="form-group col-4 form-check form-check-inline check">
+                                                <div className="form-group col-8 col-md-4  form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
@@ -118,7 +118,7 @@ class AddPharmacy extends React.Component {
                                                         onChange={this.updateCheckboxes}></input>
                                                     <label className="form-check-label" htmlFor="lateOpening">Late Opening <FontAwesomeIcon icon={faMoon} /> </label>
                                                 </div>
-                                                <div className="form-group col-4 form-check form-check-inline check">
+                                                <div className="form-group col-8 col-md-4 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
@@ -129,7 +129,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                     <label className="form-check-label" htmlFor="vaccs">Vaccinations <FontAwesomeIcon icon={faSyringe} /> </label>
                                                 </div>
-                                                <div className="form-group col-4 form-check form-check-inline check">
+                                                <div className="form-group col-8 col-md-4 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
@@ -140,7 +140,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                     <label className="form-check-label" htmlFor="delivery">Delivery <FontAwesomeIcon icon={faTruck} /></label>
                                                 </div>
-                                                <div className="form-group col-5 form-check form-check-inline check">
+                                                <div className="form-group col-8 col-md-5 form-check form-check-inline check">
                                                     <input
                                                         type="checkbox"
                                                         className="form-check-input"
