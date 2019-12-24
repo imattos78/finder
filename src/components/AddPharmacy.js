@@ -164,7 +164,7 @@ class AddPharmacy extends React.Component {
                                                     ></input>
                                                 </div>
 
-                                                <div className="col-12">
+                                                <div className="col-md-4 col-sm-12 button-align">
                                                     <button
 
                                                         type="submit"

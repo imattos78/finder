@@ -60,3 +60,18 @@
 .check input[type="checkbox"]:focus + label::before {
     outline: rgb(59, 153, 252) auto 5px;
 }
+
+.button-align{
+    display: flex;
+    justify-content: center;
+    
+}
+@media only screen and (min-width:768px){
+    .button-align{
+        display: flex;
+        justify-content: start;
+        
+    }
+
+   
+   }
