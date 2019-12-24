@@ -10,11 +10,17 @@ label {
     justify-content: center;
     
 }
+.logo-size{
+    width: 80%;
+}
 @media only screen and (min-width:768px){
     .logo-align{
         display: flex;
         justify-content: start;
         
+    }
+    .logo-size{
+        width: 40%;
     }
 
    

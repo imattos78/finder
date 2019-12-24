@@ -12,9 +12,9 @@ class Header extends React.Component {
                     <div className="card">
                         <div className="card-body">
                             <div className="logo-align">
-                            <img className="card-title" src={logo} alt="Logo" />
+                            <img className="card-title logo-size" src={logo} alt="Logo" />
                             </div>
-                            <h5 className="d-flex flex-wrap justify-content-center">Welcome to finder - map your world - <span>{date}</span></h5>
+                            <h5 className="d-flex flex-wrap justify-content-center">Welcome to finder <span>- map your world -</span> <span>{date}</span></h5>
                         </div>
                     </div>
                 </div>

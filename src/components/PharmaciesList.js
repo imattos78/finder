@@ -18,7 +18,7 @@ class PharmaciesList extends React.Component {
 
                         <div className="card-header bg-transparent">
                                                        <div className="row">
-                                <div className="col-6">
+                                <div className="col-9 col-md-6">
                                     <h5>Pharmacies Found! <img src={pharmFind} alt="icon magnifier with pharmacy symbol" width="30 px" /></h5>
                                 </div>
                                
