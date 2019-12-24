@@ -11,7 +11,9 @@ class Header extends React.Component {
                 <div className="appRow mx-auto col-12 col-lg-9 mb-2">
                     <div className="card">
                         <div className="card-body">
+                            <div className="logo-align">
                             <img className="card-title" src={logo} alt="Logo" />
+                            </div>
                             <h5 className="d-flex flex-wrap justify-content-center">Welcome to finder - map your world - <span>{date}</span></h5>
                         </div>
                     </div>

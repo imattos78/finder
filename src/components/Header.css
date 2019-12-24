@@ -5,3 +5,17 @@ h5, h6 {
 label {
     color: #8200ff
 }
+.logo-align{
+    display: flex;
+    justify-content: center;
+    
+}
+@media only screen and (min-width:768px){
+    .logo-align{
+        display: flex;
+        justify-content: start;
+        
+    }
+
+   
+   }
