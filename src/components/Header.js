@@ -12,7 +12,7 @@ class Header extends React.Component {
                     <div className="card">
                         <div className="card-body">
                             <img className="card-title" src={logo} alt="Logo" />
-                            <h5>Welcome to finder - map your world - {date}</h5>
+                            <h5 className="d-flex flex-wrap justify-content-center">Welcome to finder - map your world - <span>{date}</span></h5>
                         </div>
                     </div>
                 </div>
