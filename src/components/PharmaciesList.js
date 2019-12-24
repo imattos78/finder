@@ -21,29 +21,27 @@ class PharmaciesList extends React.Component {
                                 <div className="col-6">
                                     <h5>Pharmacies Found! <img src={pharmFind} alt="icon magnifier with pharmacy symbol" width="30 px" /></h5>
                                 </div>
-                                <div className="col-6">
-                                    <h6>(Click <img width="20 px" src={w3wlogo} alt="w3wLogo" /> to find location)</h6>
-                                </div>
+                               
                             </div>
-                            <div className="row taskRow">
+                            <div className="row taskRow d-flex align-items-end">
                                 <div className="col-2 col-md-1">
                                     <h5><FontAwesomeIcon icon={faMapMarked} /></h5>
                                 </div>
-                                <div className="col-10 col-md-5 ">
+                                <div className="col-2 col-md-3 d-flex justify-content-center">
                                     <h6>Town</h6>
                                 </div>
-                                <div className="col-2 col-md-1">
+                                <div className="col-8 col-md-5 d-flex justify-content-center">
+                                    <h6>(Click <img width="20 px" src={w3wlogo} alt="w3wLogo" /> to find location)</h6>
+                                </div>
+                                {/* <div className="col-8 col-md-4 d-flex justify-content-around">
                                     <h5><FontAwesomeIcon icon={faMoon} /></h5>
-                                </div>
-                                <div className="col-2 col-md-1">
+                              
                                     <h5><FontAwesomeIcon icon={faSyringe} /></h5>
-                                </div>
-                                <div className="col-2 col-md-1">
+                              
                                     <h5><FontAwesomeIcon icon={faTruck} /></h5>
-                                </div>
-                                <div className="col-2 col-md-1">
+                               
                                     <h5><FontAwesomeIcon icon={faLaptopMedical} /></h5>
-                                </div>
+                                </div> */}
                             </div>
 
                         </div>

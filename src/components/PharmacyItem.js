@@ -91,7 +91,7 @@ class PharmacyItem extends React.Component {
                     <h5 className="col-2 col-md-1">{this.props.e_pres === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5> */}
 
                     <div className="col-8 col-md-4">
-                       <h5 display="inline" className="d-flex"> {this.renderCatList()}</h5>
+                       <h5 display="inline" className="d-flex justify-content-around"> {this.renderCatList()}</h5>
                     </div>
 
                     {/* <div className="late">
