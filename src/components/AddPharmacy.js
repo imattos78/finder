@@ -68,6 +68,7 @@ class AddPharmacy extends React.Component {
                 [event.target.name]: value,
             });
     }
+    
 
     render() {
         console.log("some text after AddPharm render", this.state)
