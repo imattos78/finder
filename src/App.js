@@ -58,6 +58,7 @@ class App extends Component {
         console.log("Error inserting product", err);
       });
   };
+  
   deleteItem = id => {
     axios.delete(`https://e1vex1qne1.execute-api.eu-west-1.amazonaws.com/dev/pharmacies/${id}`)
       .then((response) => {
@@ -87,6 +88,7 @@ class App extends Component {
         item.e_pres = updateePres;
         item.date = moment().format('YYYY-MM-DD');
         selectedPharmacy = item;
+        console.log("selected pharmacy")
         console.log(selectedPharmacy)
       }
     });

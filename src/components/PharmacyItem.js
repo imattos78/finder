@@ -1,6 +1,6 @@
 import React from "react";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTrashAlt, faRedoAlt, faMoon, faSyringe, faTruck, faLaptopMedical, faCheckCircle, faTimesCircle } from '@fortawesome/free-solid-svg-icons';
+import { faTrashAlt, faRedoAlt, faMoon, faSyringe, faTruck, faLaptopMedical } from '@fortawesome/free-solid-svg-icons';
 import w3wlogo from "../images/w3w_logo.png"
 import Switch from "react-switch";
 
@@ -13,11 +13,15 @@ class PharmacyItem extends React.Component {
         this.state = {
             color: "blue",
             categories: [
-                { id: 1, text: <FontAwesomeIcon icon={faMoon} /> , checked: Boolean(this.props.late) },
-                { id:2, text: <FontAwesomeIcon icon={faSyringe} />, checked: Boolean(this.props.vaccine) },
-                { id:3, text: <FontAwesomeIcon icon={faTruck} />, checked: Boolean(this.props.delivery) },
-                { id:4, text: <FontAwesomeIcon icon={faLaptopMedical} />, checked: Boolean(this.props.e_pres) },
-            ]
+                { id: 1, text: <FontAwesomeIcon icon={faMoon} />, checked: Boolean(this.props.late) },
+                { id: 2, text: <FontAwesomeIcon icon={faSyringe} />, checked: Boolean(this.props.vaccine) },
+                { id: 3, text: <FontAwesomeIcon icon={faTruck} />, checked: Boolean(this.props.delivery) },
+                { id: 4, text: <FontAwesomeIcon icon={faLaptopMedical} />, checked: Boolean(this.props.e_pres) },
+            ],
+            late: 0,
+            vaccine: 0,
+            delivery: 0,
+            e_pres: 0
 
         }
         this.handleChange = this.handleChange.bind(this);
@@ -27,9 +31,14 @@ class PharmacyItem extends React.Component {
     }
 
     handleUpdate = () => {
-        this.props.updateItemFunc(this.props.id)
+        const late = this.state.categories[0].checked === true ? 1 : 0;
+        const vaccine = this.state.categories[1].checked === true ? 1 : 0;
+        const delivery = this.state.categories[2].checked === true ? 1 : 0;
+        const e_pres = this.state.categories[3].checked === true ? 1 : 0;
+        this.props.updateItemFunc(this.props.id, late, vaccine, delivery, e_pres)
 
         this.setState({
+
             color: "black"
         })
 
@@ -48,26 +57,32 @@ class PharmacyItem extends React.Component {
         const e_pres = this.state.categories[3].checked === true ? 1 : 0;
         // this.props.updateItemFunc(this.props.id, late, vaccine, delivery, e_pres)
         console.log(late, vaccine, delivery, e_pres)
-        console.log(this.state.categories) 
-        
+        console.log(this.state.categories)
+
         console.log("late")
 
         const catList = this.state.categories.map((category, i, catArray) =>
             <div>
                 {/* <span>{category.text}  </span> */}
                 <span key={category.id}>
-                <Switch
-                    onChange={(toggleValue) => {
-                        catArray[i].checked = toggleValue;
-                        this.setState({ categories: catArray });
-                    }}
-                    checked={category.checked}
-                    className="react-switch"
-                    onColor="#8200ff"
-                    offColor="#8200ff"
-                    height={20}
-                    width={40}
-                /></span>
+                    {/*  */}
+                    <Switch
+                        onChange={(toggleValue) => {
+                            catArray[i].checked = toggleValue;
+                            console.log("we've got here")
+                            console.log(this.state)
+                            this.setState({ categories: catArray });
+                            console.log("state set")
+                            console.log(this.state)
+                        }}
+                        checked={category.checked}
+                        className="react-switch"
+                        onColor="#8200ff"
+                        offColor="#8200ff"
+                        height={20}
+                        width={40}
+
+                    /></span>
             </div>
         )
         return catList;
@@ -92,7 +107,7 @@ class PharmacyItem extends React.Component {
                     <h5 className="col-2 col-md-1">{this.props.e_pres === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5> */}
 
                     <div className="col-8 col-md-4">
-                       <h5 display="inline" className="d-flex justify-content-around"> {this.renderCatList()}</h5>
+                        <h5 display="inline" className="d-flex justify-content-around"> {this.renderCatList()}</h5>
                     </div>
 
                     {/* <div className="late">
@@ -181,9 +196,9 @@ class PharmacyItem extends React.Component {
 
                 </div> */}
 
-                    {/* <div className="col-1">
+                    <div className="col-1">
                         <button className="btn" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
-                    </div> */}
+                    </div>
                     <div className="col-1">
                         <button className="btn" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></button>
                     </div>
