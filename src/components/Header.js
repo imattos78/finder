@@ -14,7 +14,7 @@ class Header extends React.Component {
                             <div className="logo-align">
                             <img className="card-title logo-size" src={logo} alt="Logo" />
                             </div>
-                            <h5 className="d-flex flex-wrap justify-content-center">Welcome to finder <span>- map your world -</span> <span>{date}</span></h5>
+                            <h5 className="d-flex flex-wrap justify-content-center">Welcome to finder - <span> map your world </span> <span>- {date}</span></h5>
                         </div>
                     </div>
                 </div>

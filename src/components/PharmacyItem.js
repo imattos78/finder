@@ -46,6 +46,7 @@ class PharmacyItem extends React.Component {
         const vaccine = this.state.categories[1].checked === true ? 1 : 0;
         const delivery = this.state.categories[2].checked === true ? 1 : 0;
         const e_pres = this.state.categories[3].checked === true ? 1 : 0;
+        // this.props.updateItemFunc(this.props.id, late, vaccine, delivery, e_pres)
         console.log(late, vaccine, delivery, e_pres)
         console.log(this.state.categories) 
         
@@ -53,7 +54,7 @@ class PharmacyItem extends React.Component {
 
         const catList = this.state.categories.map((category, i, catArray) =>
             <div>
-                <span>{category.text}  </span>
+                {/* <span>{category.text}  </span> */}
                 <span key={category.id}>
                 <Switch
                     onChange={(toggleValue) => {
@@ -180,9 +181,9 @@ class PharmacyItem extends React.Component {
 
                 </div> */}
 
-                    <div className="col-1">
+                    {/* <div className="col-1">
                         <button className="btn" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
-                    </div>
+                    </div> */}
                     <div className="col-1">
                         <button className="btn" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></button>
                     </div>

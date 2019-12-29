@@ -76,15 +76,15 @@ class App extends Component {
 
 
 
-  updateItem = id => {
+  updateItem = (id, updateLate, updateVacc, updateDeliver, updateePres) => {
     const updatedPharmacies = this.state.pharmacies;
     let selectedPharmacy = {};
     updatedPharmacies.forEach(item => {
       if (item.id === id) {
-        item.late = 0;
-        item.vaccine = 0;
-        item.delivery = 0;
-        item.e_pres = 0;
+        item.late = updateLate;
+        item.vaccine = updateVacc;
+        item.delivery = updateDeliver;
+        item.e_pres = updateePres;
         item.date = moment().format('YYYY-MM-DD');
         selectedPharmacy = item;
         console.log(selectedPharmacy)
