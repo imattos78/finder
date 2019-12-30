@@ -85,7 +85,7 @@ class AddPharmacy extends React.Component {
                                         <div className="col-12">
                                             <div className="input-group ">
                                                 <div className="form-group col-12 col-lg-9">
-                                                    <label htmlFor="examplew3wLocation"><img className="card-title" width="30 px" src={w3wlogo} alt="w3wLogo" /> Location</label>
+                                                    <label htmlFor="examplew3wLocation"><img className="card-title" width="30 px" src={w3wlogo} alt="w3wLogo" /> Location </label>
                                                     <input
                                                         type="text"
                                                         className="form-control"

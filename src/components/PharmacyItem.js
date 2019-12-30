@@ -22,10 +22,10 @@ class PharmacyItem extends React.Component {
             vaccine: 0,
             delivery: 0,
             e_pres: 0
-
         }
         this.handleChange = this.handleChange.bind(this);
     }
+
     handleDelete = () => {
         this.props.deleteItemFunc(this.props.id);
     }
@@ -41,7 +41,6 @@ class PharmacyItem extends React.Component {
 
             color: "black"
         })
-
     }
 
     handleChange(checked) {
@@ -62,10 +61,9 @@ class PharmacyItem extends React.Component {
         console.log("late")
 
         const catList = this.state.categories.map((category, i, catArray) =>
-            <div>
+            <div key={i}>
                 {/* <span>{category.text}  </span> */}
-                <span key={category.id}>
-                    {/*  */}
+                <span >
                     <Switch
                         onChange={(toggleValue) => {
                             catArray[i].checked = toggleValue;
@@ -81,7 +79,6 @@ class PharmacyItem extends React.Component {
                         offColor="#8200ff"
                         height={20}
                         width={40}
-
                     /></span>
             </div>
         )
