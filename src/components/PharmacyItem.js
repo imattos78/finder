@@ -87,7 +87,7 @@ class PharmacyItem extends React.Component {
                         <h5 display="inline" className="d-flex justify-content-around"> {this.renderCatList()}</h5>
                     </div>
                     <div className="col-1">
-                        <button className="btn" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
+                        <button className="btn shadow-none" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
                     </div>
                     <div className="col-1">
                         <button className="btn" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></button>
