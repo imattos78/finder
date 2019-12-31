@@ -48,21 +48,8 @@ class PharmacyItem extends React.Component {
     }
 
     renderCatList() {
-        console.log("renderCatList called")
-        console.log(this.state.categories[0].checked)
-        const late = this.state.categories[0].checked === true ? 1 : 0;
-        const vaccine = this.state.categories[1].checked === true ? 1 : 0;
-        const delivery = this.state.categories[2].checked === true ? 1 : 0;
-        const e_pres = this.state.categories[3].checked === true ? 1 : 0;
-        // this.props.updateItemFunc(this.props.id, late, vaccine, delivery, e_pres)
-        console.log(late, vaccine, delivery, e_pres)
-        console.log(this.state.categories)
-
-        console.log("late")
-
         const catList = this.state.categories.map((category, i, catArray) =>
             <div key={i}>
-                {/* <span>{category.text}  </span> */}
                 <span >
                     <Switch
                         onChange={(toggleValue) => {
@@ -86,8 +73,6 @@ class PharmacyItem extends React.Component {
     }
 
 
-
-
     render() {
         console.log(this.props.location)
         const link = "https://what3words.com/" + this.props.location
@@ -98,101 +83,9 @@ class PharmacyItem extends React.Component {
                 <div className="row pb-3 mb-3 d-flex align-items-end">
                     <h5 className="col-2 col-md-2"><a href={link} target="_blank" rel="noopener noreferrer"><img width="30 px" src={w3wlogo} alt="w3wLogo" /></a></h5>
                     <h5 className="col-10 col-md-3">{this.props.town}</h5>
-                    {/* <h5 className='col-2 col-md-1'>{this.props.late === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.vaccine === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.delivery === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5>
-                    <h5 className="col-2 col-md-1">{this.props.e_pres === 1 ? <FontAwesomeIcon icon={faCheckCircle} className={this.state.color} /> : <FontAwesomeIcon icon={faTimesCircle} className={this.state.color} />}</h5> */}
-
                     <div className="col-8 col-md-4">
                         <h5 display="inline" className="d-flex justify-content-around"> {this.renderCatList()}</h5>
                     </div>
-
-                    {/* <div className="late">
-                        {this.props.late === 1 ?
-                            <label>
-                                <Switch
-                                    onChange={this.handleChange}
-                                    checked={this.state.checked}
-                                    className="react-switch"
-                                    onColor="#8200ff"
-                                    offColor="#8200ff"
-                                />
-                            </label>
-                            :
-                            <label>
-                                <Switch
-                                    onChange={this.handleChange}
-                                    checked={!this.state.checked}
-                                    className="react-switch"
-                                    onColor="#8200ff"
-                                    offColor="#8200ff"
-                                />
-                            </label>
-                        }
-                    </div>
-
-                    <div className="vaccine">
-                        {this.props.vaccine === 1 ?
-                            <label>
-                                <Switch
-                                    onChange={this.handleChange}
-                                    checked={this.state.checked}
-                                    className="react-switch"
-                                    onColor="#8200ff"
-                                    offColor="#8200ff"
-                                />
-                            </label>
-                            :
-                            <label>
-                                <Switch
-                                    onChange={this.handleChange}
-                                    checked={!this.state.checked}
-                                    className="react-switch"
-                                    onColor="#8200ff"
-                                    offColor="#8200ff"
-                                />
-                            </label>
-                        }
-                    </div> */}
-
-                    {/* <div className="delivery">
-                        {this.props.delivery === 1 ?
-                            <label>
-                                <Switch
-                                    onChange={this.handleChange}
-                                    checked={this.state.checked}
-                                    className="react-switch"
-                                    onColor="#8200ff"
-                                    offColor="#8200ff"
-                                />
-                            </label>
-                            :
-                            <label>
-                                <Switch
-                                    onChange={this.handleChange}
-                                    checked={!this.state.checked}
-                                    className="react-switch"
-                                    onColor="#8200ff"
-                                    offColor="#8200ff"
-                                />
-                            </label>
-                        }
-                    </div> */}
-
-                    {/* <div className="e_pres">
-
-                    <label>
-                        <Switch
-                            onChange={this.handleChange}
-                            checked={this.state.checked}
-                            className="react-switch"
-                            onColor="#8200ff"
-                            offColor="#8200ff"
-                        />
-                    </label>
-
-                </div> */}
-
                     <div className="col-1">
                         <button className="btn" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
                     </div>
