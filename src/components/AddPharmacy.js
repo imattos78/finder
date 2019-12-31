@@ -7,16 +7,6 @@ import pharmPin from "../images/LogoMakr_2XNkij.png"
 import moment from "moment";
 
 class AddPharmacy extends React.Component {
-    // const newItem = {
-    //     location: itemLocation,
-    //     town: itemTown,
-    //     late: itemLate,
-    //     vaccine: itemVacc,
-    //     delivery: itemDeliver,
-    //     e_pres: itemePres,
-    //     date: moment().format("YYYY-MM-DD"),
-    //     id: 27
-    //   };
     state = {
         newLocation: "",
         newTown: "",
@@ -31,9 +21,7 @@ class AddPharmacy extends React.Component {
 
     handleClick = (e) => {
         e.preventDefault();
-        console.log("handleClick");
         this.props.addItemFunc(this.state.newLocation, this.state.newTown, this.state.late, this.state.vaccs, this.state.deliver, this.state.ePres, this.state.date, this.state.comments);
-        console.log("new state", this.state)
         this.setState({
             newLocation: "",
             newTown: "",
@@ -46,9 +34,6 @@ class AddPharmacy extends React.Component {
     }
 
     updateText = (event) => {
-        console.log("updateText")
-        console.log("new value", event.target.value);
-        console.log("new state name", event.target.name)
         const value = event.target.value;
         this.setState
             ({
@@ -57,11 +42,7 @@ class AddPharmacy extends React.Component {
     }
 
     updateCheckboxes = (event) => {
-        console.log("updateLate")
-        console.log("new value", event.target.value);
-        console.log("new state name", event.target.name)
         const bool = event.target.type === "checkbox" ? event.target.checked : event.target.value;
-        console.log("bool", bool)
         const value = bool === true ? 1 : 0;
         this.setState
             ({
@@ -71,7 +52,6 @@ class AddPharmacy extends React.Component {
     
 
     render() {
-        console.log("some text after AddPharm render", this.state)
         return (
 
             <form>

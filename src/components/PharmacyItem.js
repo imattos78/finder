@@ -8,8 +8,6 @@ class PharmacyItem extends React.Component {
 
     constructor(props) {
         super(props);
-        let boolVacc = Boolean(this.props.vaccine)
-        console.log(boolVacc)
         this.state = {
             color: "blue",
             categories: [
@@ -54,11 +52,7 @@ class PharmacyItem extends React.Component {
                     <Switch
                         onChange={(toggleValue) => {
                             catArray[i].checked = toggleValue;
-                            console.log("we've got here")
-                            console.log(this.state)
                             this.setState({ categories: catArray });
-                            console.log("state set")
-                            console.log(this.state)
                         }}
                         checked={category.checked}
                         className="react-switch"
@@ -74,10 +68,7 @@ class PharmacyItem extends React.Component {
 
 
     render() {
-        console.log(this.props.location)
-        const link = "https://what3words.com/" + this.props.location
-        console.log(link)
-            ;
+        const link = "https://what3words.com/" + this.props.location;
         return (
             <div>
                 <div className="row pb-3 mb-3 d-flex align-items-end">
