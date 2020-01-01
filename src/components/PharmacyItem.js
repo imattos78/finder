@@ -3,6 +3,8 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faTrashAlt, faRedoAlt, faMoon, faSyringe, faTruck, faLaptopMedical } from '@fortawesome/free-solid-svg-icons';
 import w3wlogo from "../images/w3w_logo.png"
 import Switch from "react-switch";
+import Dialog from 'react-bootstrap-dialog'
+
 
 class PharmacyItem extends React.Component {
 
@@ -29,11 +31,26 @@ class PharmacyItem extends React.Component {
     }
 
     handleUpdate = () => {
-        const late = this.state.categories[0].checked === true ? 1 : 0;
-        const vaccine = this.state.categories[1].checked === true ? 1 : 0;
-        const delivery = this.state.categories[2].checked === true ? 1 : 0;
-        const e_pres = this.state.categories[3].checked === true ? 1 : 0;
-        this.props.updateItemFunc(this.props.id, late, vaccine, delivery, e_pres)
+        this.dialog.show({
+            title: 'Updating State',
+            body: 'Press OK If You Want To Send These Updates To The Database',
+            actions: [
+              Dialog.CancelAction(),
+              Dialog.OKAction(()=> {
+              const late = this.state.categories[0].checked === true ? 1 : 0;
+              const vaccine = this.state.categories[1].checked === true ? 1 : 0;
+              const delivery = this.state.categories[2].checked === true ? 1 : 0;
+              const e_pres = this.state.categories[3].checked === true ? 1 : 0;
+              this.props.updateItemFunc(this.props.id, late, vaccine, delivery, e_pres)
+              })
+            ],
+            bsSize: 'small',
+            onHide: (dialog) => {
+              dialog.hide()
+              console.log('closed by clicking background.')
+            }
+          })
+       
 
         this.setState({
 
@@ -79,6 +96,8 @@ class PharmacyItem extends React.Component {
                     </div>
                     <div className="col-1">
                         <button className="btn shadow-none" onClick={this.handleUpdate}><FontAwesomeIcon icon={faRedoAlt} /></button>
+                        <Dialog ref={(component) => { this.dialog = component }} />
+
                     </div>
                     <div className="col-1">
                         <button className="btn" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></button>
