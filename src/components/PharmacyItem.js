@@ -11,7 +11,7 @@ class PharmacyItem extends React.Component {
     constructor(props) {
         super(props);
         this.state = {
-            color: "blue",
+            
             categories: [
                 { id: 1, text: <FontAwesomeIcon icon={faMoon} />, checked: Boolean(this.props.late) },
                 { id: 2, text: <FontAwesomeIcon icon={faSyringe} />, checked: Boolean(this.props.vaccine) },
@@ -27,7 +27,21 @@ class PharmacyItem extends React.Component {
     }
 
     handleDelete = () => {
-        this.props.deleteItemFunc(this.props.id);
+        this.dialog.show({
+            title: 'Deleting Pharmacy',
+            body: 'Press OK to confirm your action',
+            actions: [
+              Dialog.CancelAction(),
+              Dialog.OKAction(()=>{
+                this.props.deleteItemFunc(this.props.id)
+              })
+            ],
+            bsSize: 'small',
+            onHide: (dialog) => {
+              dialog.hide()
+              console.log('closed by clicking background.')
+            }
+          })
     }
 
     handleUpdate = () => {
@@ -50,12 +64,6 @@ class PharmacyItem extends React.Component {
               console.log('closed by clicking background.')
             }
           })
-       
-
-        this.setState({
-
-            color: "black"
-        })
     }
 
     handleChange(checked) {
@@ -101,6 +109,8 @@ class PharmacyItem extends React.Component {
                     </div>
                     <div className="col-1">
                         <button className="btn" onClick={this.handleDelete}><FontAwesomeIcon icon={faTrashAlt} /></button>
+                        <Dialog ref={(component) => { this.dialog = component }} />
+
                     </div>
                 </div>
             </div >
