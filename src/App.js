@@ -106,8 +106,8 @@ class App extends Component {
     return (
       <div className="container">
         <Header />
-        <TotalPharmacies count={count} />
         <AddPharmacy addItemFunc={this.addNewItem} />
+        <TotalPharmacies count={count} />
         <PharmaciesList pharmacies={this.state.pharmacies} deleteItemFunc={this.deleteItem} updateItemFunc={this.updateItem} />
         <Footer />
       </div>
