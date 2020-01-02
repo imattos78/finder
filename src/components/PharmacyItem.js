@@ -28,7 +28,7 @@ class PharmacyItem extends React.Component {
 
     handleDelete = () => {
         this.dialog.show({
-            title: 'Delete Pharmacy',
+            title: 'Deleting Pharmacy',
             body: 'Press OK to confirm your action',
             actions: [
               Dialog.CancelAction(),
@@ -46,7 +46,7 @@ class PharmacyItem extends React.Component {
 
     handleUpdate = () => {
         this.dialog.show({
-            title: 'Update State',
+            title: 'Updating Status',
             body: 'Press OK If You Want To Send These Updates To The Database',
             actions: [
               Dialog.CancelAction(),
