@@ -1,0 +1,27 @@
+{
+  "files": {
+    "main.css": "/finder/static/css/main.44c11bd0.chunk.css",
+    "main.js": "/finder/static/js/main.940bbc1c.chunk.js",
+    "main.js.map": "/finder/static/js/main.940bbc1c.chunk.js.map",
+    "runtime-main.js": "/finder/static/js/runtime-main.f6c36cf8.js",
+    "runtime-main.js.map": "/finder/static/js/runtime-main.f6c36cf8.js.map",
+    "static/js/2.3d8502cb.chunk.js": "/finder/static/js/2.3d8502cb.chunk.js",
+    "static/js/2.3d8502cb.chunk.js.map": "/finder/static/js/2.3d8502cb.chunk.js.map",
+    "index.html": "/finder/index.html",
+    "precache-manifest.9e394ec9a851c6f60143cb8213d1592a.js": "/finder/precache-manifest.9e394ec9a851c6f60143cb8213d1592a.js",
+    "service-worker.js": "/finder/service-worker.js",
+    "static/css/main.44c11bd0.chunk.css.map": "/finder/static/css/main.44c11bd0.chunk.css.map",
+    "static/js/2.3d8502cb.chunk.js.LICENSE": "/finder/static/js/2.3d8502cb.chunk.js.LICENSE",
+    "static/media/LogoMakr_0bAO9b.png": "/finder/static/media/LogoMakr_0bAO9b.11b74e52.png",
+    "static/media/LogoMakr_1cvDUu.png": "/finder/static/media/LogoMakr_1cvDUu.2c5c520f.png",
+    "static/media/LogoMakr_2XNkij.png": "/finder/static/media/LogoMakr_2XNkij.718aa4cd.png",
+    "static/media/LogoMakr_8vj7Vz.png": "/finder/static/media/LogoMakr_8vj7Vz.c63634c9.png",
+    "static/media/App.css": "/finder/static/media/team-logo.e7595eb1.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.f6c36cf8.js",
+    "static/js/2.3d8502cb.chunk.js",
+    "static/css/main.44c11bd0.chunk.css",
+    "static/js/main.940bbc1c.chunk.js"
+  ]
+}
