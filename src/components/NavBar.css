@@ -1,0 +1,15 @@
+.boton{
+    background-color: #ffffff;
+    font-size: 1.3rem;
+   
+    color: #8200ff;
+    border-radius: 6px;
+    padding: 10px 25px;
+    
+}
+.Nav_link{
+    color: #8200ff;
+  }
+  .Nav_link:link{
+    text-decoration: none;
+  }
