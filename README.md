@@ -1,7 +1,7 @@
 # Finder Application - Frontend
 This is the front end of a Finder Application, built as a collaborative final project of the [Tech Returners](https://www.techreturners.com/) Your Journey Into Tech course. It integrates with a backend, available here : https://github.com/EstamosAlwaysCurious/finder_backend.
 
-The hosted version of the application is available here: https://github.com/tobeaddedin.
+The hosted version of the application is available here: https://EstamosAlwaysCurious.github.io/finder/.
 
 ### The Application has been designed to:
 Provide an MVP for the concept of a finder app for any number of objects using crowdsourced data. For the proof of concept we have chosen to collect data on pharmacies.
