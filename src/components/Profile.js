@@ -11,9 +11,9 @@ const Profile = () => {
 
   return (
       <div className="col-12 col-lg-5 d-flex justify-content-center">
-    <Fragment>
+    <Fragment >
       <span className="box">  
-      <img className="pic" src={user.picture} alt="Profile" />
+      <img className="rounded-circle pic" src={user.picture} alt="Profile" />
       <h4>{user.name}</h4>
       {/* <p>{user.email}</p> */}
       </span>

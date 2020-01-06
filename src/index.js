@@ -34,7 +34,7 @@ ReactDOM.render(
     client_id={config.clientId}
     redirect_uri={window.location.origin}
     onRedirectCallback={onRedirectCallback}
-    logo={config.logo}
+    
   >
     <Home />
   </Auth0Provider>,

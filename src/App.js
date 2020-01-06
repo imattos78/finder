@@ -8,9 +8,10 @@ import AddPharmacy from "./components/AddPharmacy";
 import PharmaciesList from "./components/PharmaciesList";
 import Footer from './components/Footer';
 import NavBar from "./components/NavBar";
-import { Router, Route, Switch } from "react-router-dom";
+import { Router, Switch } from "react-router-dom";
 import Profile from "./components/Profile";
 import history from "./utils/history";
+import PrivateRoute from "./components/PrivateRoute";
 
 
 
@@ -129,8 +130,8 @@ class App extends Component {
         <PharmaciesList pharmacies={this.state.pharmacies} deleteItemFunc={this.deleteItem} updateItemFunc={this.updateItem} />
         <Footer />
         <Switch>
-          <Route path="/" exact />
-          <Route path="/profile" component={Profile} />
+          {/* <PrivateRoute path="/" exact /> */}
+          <PrivateRoute path="/" component={Profile} />
         </Switch>
         </Router>
       </div>
